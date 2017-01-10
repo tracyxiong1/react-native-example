@@ -9,12 +9,18 @@
     "lint:eslint": "eslint src/** index.ios.js index.android.js"
   },
   "dependencies": {
+    "immutable": "^3.8.1",
     "react": "15.4.2",
-    "react-native": "0.40.0"
+    "react-native": "0.40.0",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.0",
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "babel-jest": "18.0.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-react-native": "1.9.1",
     "eslint": "^3.13.0",
     "eslint-config-airbnb": "^14.0.0",

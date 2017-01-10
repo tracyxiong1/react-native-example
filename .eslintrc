@@ -16,6 +16,7 @@
     "import"
   ],
   "rules": {
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
+    "react/forbid-prop-types": 0,
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }]
   }
 }
