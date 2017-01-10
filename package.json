@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "lint:staged": "lint-staged",
-    "lint:eslint": "eslint --ignore-path .gitignore *"
+    "lint:eslint": "eslint src/** index.ios.js index.android.js"
   },
   "dependencies": {
     "react": "15.4.2",
