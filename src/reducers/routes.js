@@ -4,7 +4,7 @@ const { StateUtils } = NavigationExperimental;
 
 const initialState = {
   index: 0,
-  routes: [{ key: 'home' }],
+  routes: [{ key: 'main' }],
 };
 
 /* eslint-disable no-unused-vars */

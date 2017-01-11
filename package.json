@@ -6,12 +6,14 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "lint:staged": "lint-staged",
-    "lint:eslint": "eslint src/** index.ios.js index.android.js"
+    "lint:eslint": "eslint src/** index.ios.js index.android.js",
+    "postinstall": "remotedev-debugger --hostname localhost --port 5678 --injectserver"
   },
   "dependencies": {
     "immutable": "^3.8.1",
     "react": "15.4.2",
     "react-native": "0.40.0",
+    "react-native-vector-icons": "^4.0.0",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
     "redux-actions": "^1.2.0",
@@ -30,7 +32,9 @@
     "jest": "18.1.0",
     "lint-staged": "^3.2.6",
     "pre-commit": "^1.2.2",
-    "react-test-renderer": "15.4.2"
+    "react-test-renderer": "15.4.2",
+    "remote-redux-devtools": "^0.5.7",
+    "remote-redux-devtools-on-debugger": "^0.7.0"
   },
   "jest": {
     "preset": "react-native"

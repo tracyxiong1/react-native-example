@@ -3,8 +3,9 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
 } from 'react-native';
+import { connect } from 'react-redux';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,14 +26,17 @@ const styles = StyleSheet.create({
   },
 });
 
+@connect(
+  state => state,
+)
 export default class Home extends Component {
   static propTypes = {
-    navigate: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired,
   };
 
   toCounter = () => {
-    const { navigate } = this.props;
-    navigate({
+    const { dispatch } = this.props;
+    dispatch({
       type: 'push',
       key: 'counter',
     });
@@ -44,11 +48,10 @@ export default class Home extends Component {
         <Text style={styles.welcome}>
           React native Study Demo!
         </Text>
-        <TouchableOpacity onPress={this.toCounter}>
-          <Text style={styles.instructions}>Navigate to Counter</Text>
-        </TouchableOpacity>
+        <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.toCounter}>
+          Navigate to Counter
+        </Icon.Button>
       </View>
     );
   }
 }
-
