@@ -5,7 +5,9 @@ import {
   View,
 } from 'react-native';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import * as routeActions from '../actions/route';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,18 +30,16 @@ const styles = StyleSheet.create({
 
 @connect(
   state => state,
+  dispatch => bindActionCreators(routeActions, dispatch),
 )
 export default class Home extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired,
   };
 
   toCounter = () => {
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'push',
-      key: 'counter',
-    });
+    const { push } = this.props;
+    push('counter');
   }
 
   render() {

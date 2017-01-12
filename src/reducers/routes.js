@@ -1,4 +1,5 @@
 import { NavigationExperimental } from 'react-native';
+import { handleActions } from 'redux-actions';
 
 const { StateUtils } = NavigationExperimental;
 
@@ -7,21 +8,20 @@ const initialState = {
   routes: [{ key: 'main' }],
 };
 
-/* eslint-disable no-unused-vars */
-const actionsMap = {
-  push(state, action) {
-    return StateUtils.push(state, { key: action.key });
+const reducer = handleActions({
+  push: (state, action) => StateUtils.push(state, { key: action.payload }),
+  back: (state) => {
+    if (state.index > 0) {
+      return StateUtils.pop(state);
+    }
+    return state;
   },
-  back(state, action) {
-    return state.index > 0 ? StateUtils.pop(state) : state;
+  pop: (state) => {
+    if (state.index > 0) {
+      return StateUtils.pop(state);
+    }
+    return state;
   },
-  pop(state, action) {
-    return state.index > 0 ? StateUtils.pop(state) : state;
-  },
-};
+}, initialState);
 
-export default (state = initialState, action) => {
-  const reduceFn = actionsMap[action.type];
-  if (!reduceFn) return state;
-  return reduceFn(state, action);
-};
+export default reducer;

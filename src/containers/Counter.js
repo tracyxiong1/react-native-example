@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import Counter from '../components/Counter';
 import * as CounterActions from '../actions/counter';
+import * as RouteActions from '../actions/route';
 
 const styles = StyleSheet.create({
   container: {
@@ -23,23 +24,23 @@ const styles = StyleSheet.create({
   state => ({
     counter: state.counter,
   }),
+  dispatch => bindActionCreators(Object.assign({}, CounterActions, RouteActions), dispatch),
 )
 export default class CounterContainer extends Component {
   static propTypes = {
-    dispatch: PropTypes.func.isRequired,
+    back: PropTypes.func.isRequired,
   };
 
   handleBack = () => {
-    const { dispatch } = this.props;
-    dispatch({ type: 'pop' });
+    const { back } = this.props;
+    back();
   }
 
   render() {
-    const { dispatch } = this.props;
     return (
       <View style={styles.container}>
-        <Counter {...this.props} {...bindActionCreators(CounterActions, dispatch)} />
-        <TouchableOpacity onPress={() => { dispatch({ type: 'pop' }); }}>
+        <Counter {...this.props} />
+        <TouchableOpacity onPress={this.handleBack}>
           <Text style={styles.back}>Back</Text>
         </TouchableOpacity>
       </View>
