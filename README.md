@@ -1,4 +1,4 @@
-# react-native-study-demo
+# react-native-exampe
 > 一个react-native 学习示例
 
 ## Included
