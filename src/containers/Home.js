@@ -48,7 +48,7 @@ export default class Home extends Component {
         <Text style={styles.welcome}>
           React native Study Demo!
         </Text>
-        <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.toCounter}>
+        <Icon.Button name="calculator" backgroundColor="#3b5998" onPress={this.toCounter}>
           Navigate to Counter
         </Icon.Button>
       </View>

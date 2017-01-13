@@ -1,12 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Immutable from 'immutable';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  icon: {
+    marginBottom: 10,
   },
 });
 
@@ -30,18 +34,18 @@ export default class Counter extends Component {
     return (
       <View>
         <Text style={styles.text}>Clicked: {counter.get('counter')} times</Text>
-        <TouchableHighlight onPress={increment}>
-          <Text style={styles.text}>+</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={decrement}>
-          <Text style={styles.text}>-</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={incrementIfOdd}>
-          <Text style={styles.text}>Increment if odd</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={this.incrementAsync}>
-          <Text style={styles.text}>Increment async</Text>
-        </TouchableHighlight>
+        <View style={styles.icon}>
+          <Icon.Button name="ios-add" size={30} onPress={increment} >Increment</Icon.Button>
+        </View>
+        <View style={styles.icon}>
+          <Icon.Button name="ios-remove" size={30} onPress={decrement} >Increment</Icon.Button>
+        </View>
+        <View style={styles.icon}>
+          <Icon.Button name="ios-add" size={30} onPress={incrementIfOdd} >Increment if odd</Icon.Button>
+        </View>
+        <View style={styles.icon}>
+          <Icon.Button name="ios-add" size={30} onPress={this.incrementAsync} >Increment async</Icon.Button>
+        </View>
       </View>
     );
   }
