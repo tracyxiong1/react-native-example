@@ -1,7 +1,7 @@
 # react-native-exampe
 > 一个react-native 学习示例
 
-![screenshot]('./screenshot/v1.gif')
+![screenshot](./screenshot/v1.gif)
 
 ## Included
 ### react-native + redux + immutable + redux-thunk + normalizr + redux-actions + redux-devtool ...
