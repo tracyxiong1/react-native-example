@@ -1,3 +1,10 @@
+/**
+ * based on https://github.com/beefe/react-native-navigation-bar
+ * todos:
+ * 1. state/props使用比较混乱, 需要优化
+ * 2. 不支持Icon Component, 需要优化
+ * 3. css有一定冗余, 需要优化
+*/
 import React, {
   Component,
   PropTypes,
