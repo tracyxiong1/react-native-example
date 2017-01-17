@@ -33,6 +33,9 @@ export default class TabBar extends Component {
         title={v.title || ''}
         onPress={() => this.onPress(v.name)}
         selected={selected === v.name}
+        selectedIconColor="#3b5998"
+        iconColor="#aaa"
+        renderAsOriginal
       >
         {v.view}
       </Icon.TabBarItemIOS>

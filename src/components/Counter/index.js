@@ -35,16 +35,16 @@ export default class Counter extends Component {
       <View>
         <Text style={styles.text}>Clicked: {counter.get('counter')} times</Text>
         <View style={styles.icon}>
-          <Icon.Button name="ios-add" size={30} onPress={increment} >Increment</Icon.Button>
+          <Icon.Button name="ios-add" backgroundColor="#3b5998" size={30} onPress={increment} >Increment</Icon.Button>
         </View>
         <View style={styles.icon}>
-          <Icon.Button name="ios-remove" size={30} onPress={decrement} >Increment</Icon.Button>
+          <Icon.Button name="ios-remove" backgroundColor="#3b5998" size={30} onPress={decrement} >Increment</Icon.Button>
         </View>
         <View style={styles.icon}>
-          <Icon.Button name="ios-add" size={30} onPress={incrementIfOdd} >Increment if odd</Icon.Button>
+          <Icon.Button name="ios-add" backgroundColor="#3b5998" size={30} onPress={incrementIfOdd} >Increment if odd</Icon.Button>
         </View>
         <View style={styles.icon}>
-          <Icon.Button name="ios-add" size={30} onPress={this.incrementAsync} >Increment async</Icon.Button>
+          <Icon.Button name="ios-add" backgroundColor="#3b5998" size={30} onPress={this.incrementAsync} >Increment async</Icon.Button>
         </View>
       </View>
     );
